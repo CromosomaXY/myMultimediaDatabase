@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">myMultimediaDatabase</string>
+    <string name="sistemas">Consolas</string>
+    <string name="videojuegos">Videojuegos</string>
+    <string name="peliculas">Peliculas</string>
+    <string name="libros">Libros</string>
+    <string name="musica">Musica</string>
+    <string name="comics">Comics</string>
+
+    <string name="titulo_header">Terabit Developers</string>
+    <string name="subtitulo_header">elterait@elterabit.es</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>
