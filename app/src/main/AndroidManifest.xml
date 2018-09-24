@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage"/>
+        <activity android:name=".AltaSistemas"/>
+
     </application>
 
 </manifest>

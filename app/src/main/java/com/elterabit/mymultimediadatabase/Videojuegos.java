@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -17,7 +21,7 @@ import android.view.ViewGroup;
  * Use the {@link Videojuegos#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Videojuegos extends Fragment {
+public class Videojuegos extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,7 +68,36 @@ public class Videojuegos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_videojuegos, container, false);
+        //return inflater.inflate(R.layout.fragment_videojuegos, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_videojuegos, container, false);
+
+        //Test para ver la lista. Los datos los recogera de la base de datos
+
+        ArrayList<String> data = new ArrayList<>();
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+        data.add("Videojuego 1");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1,
+                data);
+
+        ListView lvVideojuegos = view.findViewById(R.id.listViewVideojuegos);
+
+        lvVideojuegos.setAdapter(adapter);
+        return view;
+
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -83,6 +116,11 @@ public class Videojuegos extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     /**
