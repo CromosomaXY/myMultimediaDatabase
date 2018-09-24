@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">myMultimediaDatabase</string>
+    <string name="app_name">My database</string>
     <string name="sistemas">Consolas</string>
     <string name="videojuegos">Videojuegos</string>
     <string name="peliculas">Peliculas</string>

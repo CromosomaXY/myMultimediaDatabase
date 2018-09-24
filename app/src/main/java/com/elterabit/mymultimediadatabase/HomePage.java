@@ -21,11 +21,14 @@ public class HomePage extends AppCompatActivity{
         setContentView(R.layout.activity_homepage);
 
         myDrawlerLayout = findViewById(R.id.drawler_layout);
+
         myToggle = new ActionBarDrawerToggle(this, myDrawlerLayout, R.string.open, R.string.close);
+
         myDrawlerLayout.addDrawerListener(myToggle);
         NavigationView nvDrawler = findViewById(R.id.navigation_view);
 
         myToggle.syncState();
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupDrawerContent(nvDrawler);
     }
