@@ -15,6 +15,7 @@ public class Constantes {
 
     //TABLA VIDEOJUEGOS
     public static final String TABLA_VIDEOJUEGOS="videojuegos";
+    public static final String CAMPO_ID_VIDEOJUEGO="id";
 
     //TABLA PELICULAS
     public static final String TABLA_PELICULAS="peliculas";
