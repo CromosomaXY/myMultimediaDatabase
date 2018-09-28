@@ -4,19 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.SearchView;
 import com.elterabit.beans.Sistema;
 
 import java.util.ArrayList;
@@ -30,11 +29,13 @@ import java.util.ArrayList;
  * Use the {@link Sistemas#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Sistemas extends Fragment implements View.OnClickListener{
+public class Sistemas extends Fragment implements SearchView.OnQueryTextListener,  MenuItem.OnActionExpandListener, View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -42,6 +43,7 @@ public class Sistemas extends Fragment implements View.OnClickListener{
 
     FloatingActionButton addBtn;
     ArrayList<Sistema> listaSistemas;
+    ArrayAdapter<String> adapter;
 
 
     private OnFragmentInteractionListener mListener;
@@ -71,7 +73,7 @@ public class Sistemas extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setHasOptionsMenu(true);
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -80,6 +82,31 @@ public class Sistemas extends Fragment implements View.OnClickListener{
 
 
 
+
+    }
+
+
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        inflater.inflate(R.menu.menu_search, menu);
+        MenuItem searchItem = menu.findItem(R.id.menuSearch);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+        super.onCreateOptionsMenu(menu, inflater);
 
     }
 
@@ -118,7 +145,7 @@ public class Sistemas extends Fragment implements View.OnClickListener{
         data.add("Sistema 10");
         data.add("Sistema 11");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+        adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1,
                 data);
 
@@ -162,6 +189,26 @@ public class Sistemas extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onMenuItemActionExpand(MenuItem menuItem) {
+        return false;
+    }
+
+    @Override
+    public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+        return false;
     }
 
 

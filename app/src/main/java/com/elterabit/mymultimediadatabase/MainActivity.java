@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //se crea la base de datos.
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "my_mini_database", null, 1);
 
         //pondremos la imagen a pantalla completa y sin titulo
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void run(){
                 try{
-                    sleep(2000);
+                    sleep(500);
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }
