@@ -5,7 +5,7 @@ public class Videojuego {
     private Integer id;
     private String nombre;
     private String plataforma;
-    private String jugadores;
+    private Integer jugadores;
     private String genero;
     private String desarrollador;
     private String formato;
@@ -26,19 +26,17 @@ public class Videojuego {
         this.nombre = nombre;
     }
 
-    public String getPlataforma() {
-        return plataforma;
-    }
+    public String getPlataforma() { return plataforma;  }
 
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
     }
 
-    public String getJugadores() {
+    public Integer getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(String jugadores) {
+    public void setJugadores(Integer jugadores) {
         this.jugadores = jugadores;
     }
 

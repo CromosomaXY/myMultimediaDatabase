@@ -6,8 +6,9 @@ public class Comics {
     private String autor;
     private String editorial;
     private String formato;
-    private String anno;
+    private Integer anno;
     private Integer paginas;
+    private Integer numero;
 
 
     public Integer getId() {
@@ -18,9 +19,7 @@ public class Comics {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
+    public String getTitulo() { return titulo; }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -50,11 +49,11 @@ public class Comics {
         this.formato = formato;
     }
 
-    public String getAnno() {
+    public Integer getAnno() {
         return anno;
     }
 
-    public void setAnno(String anno) {
+    public void setAnno(Integer anno) {
         this.anno = anno;
     }
 
@@ -65,4 +64,9 @@ public class Comics {
     public void setPaginas(Integer paginas) {
         this.paginas = paginas;
     }
+
+    public Integer getNumero() { return numero; }
+
+    public void setNumero(Integer numero) { this.numero = numero;  }
+
 }
