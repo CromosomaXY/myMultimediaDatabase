@@ -1,6 +1,8 @@
 package com.elterabit.beans;
 
-public class Videojuego {
+import java.io.Serializable;
+
+public class Videojuego implements Serializable {
 
     private Integer id;
     private String nombre;

@@ -67,13 +67,11 @@ public class AltaSistemas extends AppCompatActivity{
             Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_LONG).show();
             limpiarCampos();
         }
-
-
-
-
     }
 
     private void limpiarCampos() {
+        nombreSistema.setText("");
+        nombreCompania.setText("");
     }
 
 
