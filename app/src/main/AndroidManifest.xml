@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage"/>
-        <activity android:name=".AltaSistemas"/>
+        <activity android:name="com.elterabit.altas.AltaSistemas"/>
+        <activity android:name="com.elterabit.detalles.DetalleSistemas"/>
 
     </application>
 

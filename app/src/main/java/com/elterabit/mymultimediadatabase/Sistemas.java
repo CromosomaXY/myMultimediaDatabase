@@ -2,6 +2,8 @@ package com.elterabit.mymultimediadatabase;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +18,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.SearchView;
+
+import com.elterabit.altas.AltaSistemas;
 import com.elterabit.beans.Sistema;
+import com.elterabit.detalles.DetalleSistemas;
 
 import java.util.ArrayList;
 
@@ -43,7 +48,9 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
 
     FloatingActionButton addBtn;
     ArrayList<Sistema> listaSistemas;
+    ArrayList<String> listaResultados;
     ArrayAdapter<String> adapter;
+    ConexionSQLiteHelper conn;
 
 
     private OnFragmentInteractionListener mListener;
@@ -51,7 +58,6 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
     public Sistemas() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -75,17 +81,12 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        conn = new ConexionSQLiteHelper(getContext(), "my_mini_database", null, 2);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
-
     }
-
-
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
@@ -105,9 +106,7 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
             }
         });
 
-
         super.onCreateOptionsMenu(menu, inflater);
-
     }
 
     @Override
@@ -115,10 +114,6 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_sistemas, container, false);
-
-
-
-
         View view = inflater.inflate(R.layout.fragment_sistemas, container, false);
 
         addBtn = view.findViewById(R.id.fabSistemas);
@@ -130,24 +125,11 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
             }
         });
 
-
-
-        ArrayList<String> data = new ArrayList<>();
-        data.add("Sistema 1");
-        data.add("Sistema 2");
-        data.add("Sistema 3");
-        data.add("Sistema 4");
-        data.add("Sistema 5");
-        data.add("Sistema 6");
-        data.add("Sistema 7");
-        data.add("Sistema 8");
-        data.add("Sistema 9");
-        data.add("Sistema 10");
-        data.add("Sistema 11");
+        consultarSistemas();
 
         adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1,
-                data);
+                listaResultados);
 
         ListView lvSistemas = view.findViewById(R.id.listViewSistemas);
         lvSistemas.setAdapter(adapter);
@@ -156,17 +138,50 @@ public class Sistemas extends Fragment implements SearchView.OnQueryTextListener
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Sistema sistema = new Sistema();
+                sistema = listaSistemas.get(position);
+
+                Intent intent = new Intent(getContext(), DetalleSistemas.class);
+                Bundle bundle  = new Bundle();
+
+                bundle.putSerializable("sistema", sistema);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
-
         return view;
+    }
+
+    private void consultarSistemas(){
+        SQLiteDatabase db = conn.getReadableDatabase();
+        listaSistemas = new ArrayList<Sistema>();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Constantes.TABLA_SISTEMAS, null);
+
+        while(cursor.moveToNext()){
+            Sistema sistema = new Sistema();
+            sistema.setId(cursor.getInt(0));
+            sistema.setNombre(cursor.getString(1));
+            sistema.setCompania(cursor.getString(2));
+
+            listaSistemas.add(sistema);
+        }
+
+        obtenerListaSistemas();
 
     }
 
+    private void obtenerListaSistemas(){
+        listaResultados = new ArrayList<String>();
 
-
-
+        for(int i=0; i<listaSistemas.size(); i++){
+            if(listaSistemas.get(i).getCompania() == null){
+                listaResultados.add(listaSistemas.get(i).getNombre());
+            } else {
+                listaResultados.add(listaSistemas.get(i).getNombre() +  " (" + listaSistemas.get(i).getCompania() + ")");
+            }
+        }
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

@@ -1,6 +1,8 @@
 package com.elterabit.beans;
 
-public class Sistema {
+import java.io.Serializable;
+
+public class Sistema implements Serializable {
     private Integer id;
     private String nombre;
     private String compania;

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //se crea la base de datos.
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "my_mini_database", null, 1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "my_mini_database", null, 2);
 
         //pondremos la imagen a pantalla completa y sin titulo
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);

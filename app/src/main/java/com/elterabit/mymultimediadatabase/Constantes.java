@@ -7,10 +7,10 @@ public class Constantes {
     public static final String TABLA_SISTEMAS="sistemas";
     public static final String CAMPO_ID_SISTEMAS="id";
     public static final String CAMPO_NOMBRE_SISTEMA="nombre";
-    public static final String CAMPO_CAMPANIA="compania";
+    public static final String CAMPO_COMPANIA="compania";
     public static final String CREAR_TABLA_SISTEMAS="CREATE TABLE " +
             ""+TABLA_SISTEMAS+" ("+CAMPO_ID_SISTEMAS+" " +
-            "INTEGER, "+CAMPO_NOMBRE_SISTEMA+" TEXT,"+CAMPO_CAMPANIA+" TEXT)";
+            "INTEGER, "+CAMPO_NOMBRE_SISTEMA+" TEXT,"+CAMPO_COMPANIA+" TEXT)";
 
 
     //TABLA VIDEOJUEGOS

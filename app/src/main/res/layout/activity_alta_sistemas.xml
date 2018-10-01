@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/alta_sistemas_activity"
+    <LinearLayout
+        android:id="@+id/activity_alta_sistemas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Alta de sistemas"/>
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Registro de nueva consola"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:id="@+id/nombre_sistema"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Compañia"
+            android:id="@+id/nombre_compania"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_registro_sistema"
+            android:layout_marginTop="30dp"
+            android:onClick="onClick"
+            android:text="REGISTRAR SISTEMA"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
