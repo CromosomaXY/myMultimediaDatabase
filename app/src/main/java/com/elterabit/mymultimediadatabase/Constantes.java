@@ -23,7 +23,7 @@ public class Constantes {
     public static final String CAMPO_DESARROLLADOR="desarrollador";
     public static final String CAMPO_FORMATO="formato";
     public static final String CREAR_TABLA_VIDEOJUEGOS="CREATE TABLE " +
-            "" +TABLA_VIDEOJUEGOS+" ("+CAMPO_ID_VIDEOJUEGO+" INTEGER, " +
+            "" +TABLA_VIDEOJUEGOS+" ("+CAMPO_ID_VIDEOJUEGO+" TEXT, " +
                                      ""+CAMPO_NOMBRE_VIDEOJUEGO+" TEXT, " +
                                      ""+CAMPO_NOMBRE_PLATAFORMA+" TEXT, " +
                                      ""+CAMPO_NUMERO_JUGADORES+" INTEGER, " +

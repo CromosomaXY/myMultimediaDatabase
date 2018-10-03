@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Videojuego implements Serializable {
 
-    private Integer id;
+    private String id;
     private String nombre;
     private String plataforma;
     private Integer jugadores;
@@ -12,11 +12,11 @@ public class Videojuego implements Serializable {
     private String desarrollador;
     private String formato;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
