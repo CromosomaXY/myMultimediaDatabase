@@ -44,7 +44,7 @@ public class AltaVideojuegos extends AppCompatActivity{
 
         try{
             ContentValues cValuesVideojuegos = new ContentValues();
-            cValuesVideojuegos.put(Constantes.CAMPO_ID_VIDEOJUEGO, util.generadorPkVideojuegos());
+            cValuesVideojuegos.put(Constantes.CAMPO_ID_VIDEOJUEGO, util.Util("VJ-"));
             cValuesVideojuegos.put(Constantes.CAMPO_NOMBRE_VIDEOJUEGO, nombreVideojuego.getText().toString());
             cValuesVideojuegos.put(Constantes.CAMPO_NOMBRE_PLATAFORMA, nombrePlataforma.getText().toString());
             cValuesVideojuegos.put(Constantes.CAMPO_NUMERO_JUGADORES, numeroJugadores.getText().toString());

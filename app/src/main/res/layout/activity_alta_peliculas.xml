@@ -4,11 +4,52 @@
     android:layout_height="match_parent">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="peliculas"/>
+        android:id="@+id/activity_alta_peliculas"
+        android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro de peliculas"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre_pelicula"
+            android:hint="Pelicula"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre_productora"
+            android:hint="Productora"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/annio_pelicula"
+            android:hint="Año"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/formato_pelicula"
+            android:hint="Formato"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO PELICULA"
+            android:onClick="onClick"
+            android:layout_marginTop="30dp"
+            android:id="@+id/btn_registro_pelicula"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

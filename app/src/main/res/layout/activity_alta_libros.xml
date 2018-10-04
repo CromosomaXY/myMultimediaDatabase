@@ -3,13 +3,58 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/activity_alta_libros"
+       android:orientation="vertical">
 
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="30dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="10dp"
+           android:text="Registro de nuevo libro"
+           android:textSize="20sp"
+           android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Libros"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/nombre_libro"
+           android:hint="Titulo"/>
 
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/nombre_autor"
+           android:hint="Autor"/>
 
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/nombre_editorial"
+           android:hint="Editorial"/>
 
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/num_paginas_libro"
+           android:hint="Páginas"/>
+
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/formato_libro"
+           android:hint="Formato"/>
+
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/btn_registro_libro"
+           android:layout_marginTop="30dp"
+           android:onClick="onClick"
+           android:text="REGISTRAR LIBRO"/>
+   </LinearLayout>
 </android.support.constraint.ConstraintLayout>
