@@ -160,7 +160,7 @@ public class Videojuegos extends Fragment implements SearchView.OnQueryTextListe
 
         while(cursor.moveToNext()){
             Videojuego vJuego = new Videojuego();
-            vJuego.setId(cursor.getInt(0));
+            vJuego.setId(cursor.getString(0));
             vJuego.setNombre(cursor.getString(1));
             vJuego.setPlataforma(cursor.getString(2));
             vJuego.setJugadores(cursor.getInt(3));

@@ -4,10 +4,115 @@
     android:layout_height="match_parent">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HOLAA"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoIdVideojuego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1094"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Videojuego"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoNombreVideojuego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NES"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plataforma"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/campoPlataforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jugadores"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/numeroJugadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Genero"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/campoGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Desarrolladora"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/campoDesarrolladora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Formato"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/campoFormato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>
