@@ -3,10 +3,82 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Peliculas info"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoIdPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1094"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoNombrePelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NES"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Productora"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoNombreProductora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Año"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoAnnioPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Formato"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/campoFormatoPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75845682"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
 
 
 
